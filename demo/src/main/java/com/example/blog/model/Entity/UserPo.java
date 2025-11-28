@@ -1,7 +1,10 @@
-package com.example.blog.Entity;
+package com.example.blog.model.Entity;
 
+import com.example.blog.model.Dto.RegisterDto;
 import lombok.Data;
 import lombok.extern.slf4j.Slf4j;
+
+import static com.example.blog.util.PasswordUtil.encryptPassword;
 
 
 @Data
@@ -18,7 +21,7 @@ public class UserPo {
 
     private String phone;
 
-    //权限
+    //权限 0 为管理员 1 为用户
     private int role;
 
     //删除 未删除
@@ -32,4 +35,16 @@ public class UserPo {
 
     //状态 正常 禁用
     private int status;
+
+
+
+    public void newEntity(RegisterDto dto){
+        username = dto.getUsername();
+        password = encryptPassword(dto.getPassword());
+        email = dto.getEmail();
+        phone = dto.getPhone();
+        role = 1;
+        this.deleted = 0;
+        this.status = 1;
+    }
 }

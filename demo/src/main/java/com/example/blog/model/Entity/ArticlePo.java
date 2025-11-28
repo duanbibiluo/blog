@@ -1,5 +1,8 @@
-package com.example.blog.Entity;
+package com.example.blog.model.Entity;
 
+import lombok.Data;
+
+@Data
 public class ArticlePo {
     private Long id;
 
