@@ -1,10 +1,11 @@
 package com.example.blog.model.Entity;
 
 import com.example.blog.model.Dto.RegisterDto;
+import com.example.blog.util.PasswordUtil;
 import lombok.Data;
 import lombok.extern.slf4j.Slf4j;
 
-import static com.example.blog.util.PasswordUtil.encryptPassword;
+//import static com.example.blog.util.PasswordUtil.encryptPassword;
 
 
 @Data
@@ -40,7 +41,8 @@ public class UserPo {
 
     public void newEntity(RegisterDto dto){
         username = dto.getUsername();
-        password = encryptPassword(dto.getPassword());
+         password = PasswordUtil.encryptPassword(dto.getPassword());
+//        password = dto.getPassword();
         email = dto.getEmail();
         phone = dto.getPhone();
         role = 1;

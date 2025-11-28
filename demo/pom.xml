@@ -21,6 +21,11 @@
     </properties>
 
     <dependencies>
+        <dependency>
+            <groupId>org.bouncycastle</groupId>
+            <artifactId>bcpkix-jdk18on</artifactId>
+            <version>1.76</version>
+        </dependency>
         <!-- Web 相关 -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -34,10 +39,9 @@
             <version>${mybatis-spring-boot-starter.version}</version>
         </dependency>
 
-        <!-- Security -->
         <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-security</artifactId>
+            <groupId>org.springframework.security</groupId>
+            <artifactId>spring-security-core</artifactId>
         </dependency>
 
         <!-- JWT -->

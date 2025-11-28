@@ -13,4 +13,6 @@ public class LoginVo {
 
 
     private String token; //令牌
+
+    private int role;
 }
